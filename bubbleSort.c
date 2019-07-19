@@ -1,37 +1,29 @@
 #include <stdio.h>
 #include <stdlib.h>
 #define MAX 5
-void swap(int *p1, int *p2) //External function to swap, can be done in sort function too.
+void swap(int *p1, int *p2) //External swap function
 {
     int temp = *p1;
     *p1 = *p2;
     *p2 = temp;
 }
-void sort(int arr[], int n) //Function to sort the values.
+void sort(int arr[]) //To sort the elements
 {
     int i,j;
-    for(i=0; i < n - 1; i++)
-        for(j=0; j<n-i-1; j++)
-        {
-            if (arr[j]>arr[j+1])
+    for (i=0; i<MAX-1; i++)
+        for(j=0; j<MAX-i-1; j++)
+            if(arr[j]>arr[j+1])
                 swap(&arr[j],&arr[j+1]);
-        }
-
 }
-void print(int arr[], int n) //Prints the array.
+void print(int arr[]) //To print the elements
 {
     int c;
-    for(c=0;c<=n-1;c++)
-    {
-        printf("%d\t", arr[c]);
-    }
-
+    for (c=0;c<MAX;c++)
+        printf("%d  ", arr[c]);
 }
-int main() //Driver function.
+void main() //Driver function;
 {
-    int arr[MAX] = {4,5,3,23,567};
-    int n = MAX;
-    sort(arr,n);
-    print(arr,n);
-    return 0;
+    int arr[MAX] = {122,903,344,788,455};
+    sort(arr);
+    print(arr);
 }
