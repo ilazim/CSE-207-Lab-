@@ -6,7 +6,7 @@ struct node //Struct to hold the elements
  struct node * next;
 };
 struct node *start = NULL;
-void insert(int x)
+void insert(int x) // Helper to add elements
 {
     struct node *ele, *temp;
     ele = (struct node*)malloc(sizeof(struct node));
@@ -24,7 +24,7 @@ void insert(int x)
      temp->next = ele;
     }
 }
-void traverse()
+void traverse() // Function to print out the elements
 {
     struct node *t;
     t = start;
@@ -34,7 +34,7 @@ void traverse()
         t=t->next;
     }
 }
-int main()
+int main() //Driver function
 {
     int c, data,n=0;
     printf("Enter the number of nodes:");
