@@ -1,10 +1,10 @@
-void traverse
+void traverse()
 {
   struct node *t;
   t = start;
   while (t != NULL)
   {
-      printf("%d", t->element);
+      printf("%d\n", t->element);
       t=t->next;
   }
 }
