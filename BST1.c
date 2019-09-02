@@ -13,7 +13,6 @@ struct node* newNode(int x)
     mem = (struct node*)malloc(sizeof(struct node));
     mem->data=x;
     mem->left=mem->right = NULL;
-    return mem;
 }
 struct node* Insert (struct node* start, int data)
 {
