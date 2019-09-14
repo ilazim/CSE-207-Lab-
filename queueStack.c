@@ -39,7 +39,6 @@ void transfer()
 }
 int dequeue()
 {
-    transfer();
     int b =temp[count];
     count--;
     return b;
@@ -49,6 +48,7 @@ int main()
     enqueue(5);
     enqueue(6);
     enqueue(7);
+    transfer();
 
     printf("%d",dequeue());
     return 0;
