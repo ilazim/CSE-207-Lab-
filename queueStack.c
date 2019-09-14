@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #define MAXSIZE 10
-
 int top=-1;
 int count=-1;
 int data[MAXSIZE];
@@ -15,9 +14,7 @@ void enqueue(int x)
     {
         top++;
         data[top] = x;
-
     }
-
 }
 int pop()
 {
@@ -25,7 +22,6 @@ int pop()
     top--;
     return a;
 }
-
 void transfer()
 {
     int x;
@@ -35,7 +31,6 @@ void transfer()
         count++;
         temp[x] = pop();
     }
-
 }
 int dequeue()
 {
@@ -49,7 +44,6 @@ int main()
     enqueue(6);
     enqueue(7);
     transfer();
-
     printf("%d",dequeue());
     return 0;
 }
