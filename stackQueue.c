@@ -2,9 +2,9 @@
 #include <stdlib.h>
 #define MAXSIZE 10
 
-int front1,
+int front1 = 0,
     front2 = 0,
-    rear1,
+    rear1 = -1,
     rear2 = -1;
 
 int data[MAXSIZE];
@@ -24,6 +24,8 @@ void push(int x)
 int dequeue()
 {
     int a = data[front1];
+   // printf("a=%d\n", a);
+
     front1++;
     return a;
 }
@@ -31,19 +33,24 @@ int dequeue()
 void transfer()
 {
     int x;
-    int y = rear1;
-    for (x=0; x<=y; x++)
+    //int y = rear1-1;
+   // printf("%d\n", y);
+    for (x=rear1; x>=0; x--)
     {
         rear2++;
         temp[x] = dequeue();
+       // printf("x=%d\n", x);
+        //printf("temp,x=%d\n", temp[x]);
+
     }
 
 }
 int pop()
 {
-    transfer();
-    int b =temp[rear2];
-    rear2++;
+    int b = temp[front2];
+       // printf("%d::", front2);
+
+    front2++;
     return b;
 }
 int main()
@@ -51,7 +58,14 @@ int main()
     push(5);
     push(6);
     push(7);
+   // printf("%d\n", rear1);
 
-    printf("%d",pop());
+    transfer();
+    printf("%d", pop());
+    printf("%d", pop());
+    printf("%d", pop());
+
+
+
     return 0;
 }
