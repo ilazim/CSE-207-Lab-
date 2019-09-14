@@ -7,7 +7,7 @@ int count=-1;
 int data[MAXSIZE];
 int temp[MAXSIZE];
 
-void push(int x)
+void enqueue(int x)
 {
     if (top>=MAXSIZE)
         printf("The queue is full");
@@ -46,9 +46,9 @@ int dequeue()
 }
 int main()
 {
-    push(5);
-    push(6);
-    push(7);
+    enqueue(5);
+    enqueue(6);
+    enqueue(7);
 
     printf("%d",dequeue());
     return 0;
