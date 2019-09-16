@@ -62,6 +62,8 @@ int main()
     start = Insert(start,55);
     if(find(start, test)==1)
         printf("%d is in the tree.", test);
+    else if(find(start, test)==0)
+        printf("the tree is empty");
     else
         printf("%d is not in the tree.", test);
     return 0;
