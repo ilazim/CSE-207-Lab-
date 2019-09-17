@@ -50,22 +50,35 @@ int find(struct node* start,int data)
         return find(start->right,data);
     }
 }
+void init()
+{
+    printf("Enter the number of elements:");
+    int n;
+    scanf("%d", &n);
+    int i, d;
+
+    for(i=0; i<n; i++)
+    {
+        printf("Enter the value for node %d",i);
+        scanf("%d",&d);
+        start = Insert(start,d);
+    }
+}
+void search()
+{
+    int key;
+    printf("enter a number to search for:");
+    scanf("%d", &key);
+
+    if(find(start, key)==1)
+        printf("%d is in the tree.", key);
+ 
+    else if(find(start, key)==0)
+        printf("%d is not in the tree.", key);
+}
 int main()
 {
-    int test;
-    printf("enter a number to find for:");
-    scanf("%d", &test);
-    start = Insert(start,1);
-    start = Insert(start,5);
-    start = Insert(start,2);
-    start = Insert(start,7);
-    start = Insert(start,8);
-    start = Insert(start,55);
-    if(find(start, test)==1)
-        printf("%d is in the tree.", test);
-    else if(find(start, test)==0)
-        printf("the tree is empty");
-    else
-        printf("%d is not in the tree.", test);
+    init();
+    search();
     return 0;
 }
