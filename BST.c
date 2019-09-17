@@ -59,7 +59,7 @@ void init()
 
     for(i=0; i<n; i++)
     {
-        printf("Enter the value for node %d",i);
+        printf("Enter the value for node %d: ",i);
         scanf("%d",&d);
         start = Insert(start,d);
     }
